@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h1>Welcome to the dashboard</h1>
+        <p>Here's a bunch of super secret information</p>
+
+        <div>
+            <p>nilaiku = 
+                <strong>
+                 {{ nilai }}
+                </strong> 
+             </p>
+        </div>
+
+        <!-- LOOPING -->
+        <div>
+            Ini adalah nama-nama hari dalam seminggu:
+            <ul>
+                {% for hari in hari %}
+                    <li>{{ hari }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- IF ELSE -->
+        <div>
+            {% if nilai > 50 %}
+                <p>Nilai kamu di atas 50, selamat ya!</p>
+            {% else %}
+                <p>Nilai kamu di bawah 50, semangat ya!</p>
+            {% endif %}
+        </div>
+        
+        
+
+
+
+        <a href="/logout">Logout</a>
+    </body>
+</html>

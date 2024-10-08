@@ -1,0 +1,91 @@
+
+{% extends "main.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+
+
+</style>
+<section id="team" class="team">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <!-- <h2>Team</h2> -->
+        <p>Rekomendasi Mahasiswa</p>
+        <br>
+        <div class="col-md-12 mt-4">
+          <div class="box">
+              <div class="container" data-aos="fade-up" style="text-align: left;">
+                <h2 class="">Personality Programmer : {{ personality }}</h2>
+                <h2 class="">Bahasa Pemrograman : {{ bhspemrograman }}</h2>
+                <h2 class="">Role : {{ role }}</h2>
+                <h2 class="">Komunitas : {{ komunitas }}</h2>
+                <h2 class="">Nama Projek : {{ project_name }}</h2>
+                <h2 class="">Deskripsi Projek : {{ project_description }}</h2>
+              </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="row gy-4">
+        {% for project in projects %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+            {% if project.Semester == 4 %}
+                <img src="static/img/team/team-1.jpg" class="img-fluid" alt="">
+            {% elif project.Semester == 6 %}
+                <img src="static/img/team/team-2.jpg" class="img-fluid" alt="">
+            {% elif project.Semester == 8 %}
+                <img src="static/img/team/team-3.jpg" class="img-fluid" alt="">
+            {% else %}
+                <img src="static/img/team/person.jpg" class="img-fluid" alt="">
+            {% endif %}
+              <div class="social">
+                <a href="http://wa.me/{{project.NoWa}}" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                <a href="{{ project.Github }}" target="_blank"><i class="bi bi-github"></i></a>
+                <!-- <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a> -->
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>{{project.No}}-{{ project.Nama }}</h4>
+              <span>Komunitas : {{ project.Komunitas }}</span>
+              <span>Aplikasi yang pernah dibuat :</span>
+              <p>{{ project.Deskripsi }} - {{ project.Bahasa }}</p>
+
+              <!-- <p>
+                {{ project.metadata }}
+              </p> -->
+              
+            </div>
+            <div class="div">
+              <span class="badge bg-info">{{ project.cosine_similarity }}</span>
+            </div>
+
+            <span class="badge bg-light">{{ project.Github }}</span>
+
+          </div>
+        </div>
+        {% endfor %}
+
+        </div>
+    </div>
+
+  </section>
+  <script>
+    // Daftar gambar yang tersedia di folder Anda
+    var images = ['team-1.jpg', 'team-2.jpg', 'team-3.jpg', 'team-4.jpg']; // Ganti dengan nama gambar di folder Anda
+  
+    // Mendapatkan elemen gambar
+    var imgElement = document.getElementById('randomImage');
+  
+    // Memilih gambar secara acak dari daftar gambar
+    var randomIndex = Math.floor(Math.random() * images.length);
+  
+    // Mengatur src gambar menjadi gambar yang dipilih secara acak
+    imgElement.src = 'static/img/team/' + images[randomIndex];
+  </script>
+{% endblock %}

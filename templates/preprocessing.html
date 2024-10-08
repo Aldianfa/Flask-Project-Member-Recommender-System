@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+    <section id="rekomendasi" class="rekomendasi mt-10">
+        <center>
+            <div class="container" data-aos="fade-up">
+                    <header class="section-header">
+                        <p>Data Projek Mahasiswa Setelah di Preprocessing</p>
+                    </header>
+                    <form action="{{ url_for('save_to_database') }}" method="POST">
+                        <table id="example2" class="table table-bordered table-striped">
+                            <thead>
+                                <th>Nama</th>
+                                <th>Personality</th>
+                                <th>Bahasa Pemrograman</th>
+                                <th>Role Projek</th>
+                                <th>Projek</th>
+                                <th>Deskripsi</th>
+                                <th>Metadata</th>
+                            </thead>
+                            <tbody>
+                                
+                                {% for prepro_data in data %}
+                                <tr>
+                                    <!-- <td>{{ loop.index }}</td> -->
+                                    <td>{{ prepro_data[1] }}</td>
+                                    <td>{{ prepro_data[6] }}</td>
+                                    <td>{{ prepro_data[7] }}</td>
+                                    <td>{{ prepro_data[9] }}</td>
+                                    <td>{{ prepro_data[10] }}</td>
+                                    <td>{{ prepro_data[11] }}</td>
+                                    <td>{{ metadata[loop.index0] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- <button action="submit" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Simpan</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </button> -->
+                    </form>
+            </div>
+        </center>
+    </section>
+    
+{% endblock %}
+    

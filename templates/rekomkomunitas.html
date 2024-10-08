@@ -1,0 +1,91 @@
+{% extends "main.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+    <section id="rekomendasi" class="rekomendasi mt-10">
+        <center>
+        <div class="box">
+            <div class="container" data-aos="fade-up">
+                <!-- <div class="row gx-0"> -->
+                    <header class="section-header">
+                        <p>Inputkan Kriteria Projekmu!</p>
+                    </header>
+                    <form action="{{url_for('komunitas_recommendation')}}" method="POST" role="form">
+                        <!-- <div class="form-group"> -->
+                            <label for="personality">Personality :</label>
+                            <select name="personality" id="personality" class="form-select" required>
+                                <option value="Oppeness to Experience"><strong>Oppeness to Experience</strong> - Programmer yang kreatif, ingin tahu, dan bersedia menjelajahi ide-ide baru</option>
+                                <option value="Conscientiousness">Conscientiousness - Programmer yang teliti, teratur, dan bertanggung jawab. </option>
+                                <option value="Extraversion">Extraversion - Programmer yang ekstrovert, percaya diri, dan suka bekerja dalam tim. </option>
+                                <option value="Agreeableness">Agreeableness - Programmer yang ramah, baik hati, dan kooperatif.</option>
+                                <option value="Neuroticism">Neuroticism - Programmer yang emosional, tidak stabil, dan cenderung cemas.</option>
+                            </select>
+                            <br>
+                            <label for="skill">Bahasa Pemrograman :</label>
+                            <select name="bahasapemrograman" id="bahasa" required multiple>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="cplusplus">C++</option>
+                                <option value="csharp">C#</option>
+                                <option value="html">HTML</option>
+                                <option value="css">CSS</option>
+                                <option value="sql">SQL</option>
+                                <option value="javascript">Javascript</option>
+                                <option value="php">PHP</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="swift">Swift</option>
+                                <option value="kotlin">Kotlin</option>
+                                <option value="go">Go</option>
+                                <option value="dart">Dart</option>
+                            </select>
+                            <br>
+                            <label for="role">Role Projek :</label>
+                            <select name="role" id="role" class="form-select" required>
+                                <option value="frontend">Frontend Developer</option>
+                                <option value="backend">Backend Developer</option>
+                                <option value="fullstack">Fullstack Developer</option>
+                                <option value="network engineer">Network Engineer</option>
+                                <option value="security engineer">Security Engineer</option>
+                                <option value="cloud engineer">Cloud Engineer</option>
+                                <option value="UI/UX Designer">UI/UX Designer</option>
+                                <option value="qa engineer">QA Engineer</option>
+                                <option value="data analyst">Data Analyst</option>
+                                <option value="team lead">Team Lead</option>
+                            </select>
+                            <br>
+                            <label for="komunitas">Komunitas :</label>
+                            <select name="komunitas" id="komunitas" class="form-select" required>
+                                <option value="gdsc">GDSC</option>
+                                <option value="gdsc">GDSC</option>
+                                <option value="mocap">MOCAP (Mobile Community AllPlatform)</option>
+                                <option value="weboender">WEBBOENDER (Web)</option>
+                                <option value="uinux">UINUX (UIUX)</option>
+                                <option value="ontaki">ONTAKI (Robotic)</option>
+                                <option value="fun java">FUNJAVA (Pemrograman Java)</option>
+                                <option value="eth0">ETH0 (Jaringan)</option>
+                                <option value="uinbuntu">UINBUNTU (Operating System)</option>
+                                <option value="mamud">MAMUD (Multimedia Design)</option>
+                                <option value="dse">DSE (Data Science)</option>
+                            </select>
+                            <br>
+                            <label for="projek">Nama Projek :</label>
+                            <input type="text" name="projek" id="projek" class="form-control" placeholder="inputkan nama proyekmu" required>
+                            <br>
+                            <label for="deskripsi">Deskripsi Projek :</label>
+                            <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="jelaskan fitur dari proyekmu" required></textarea>
+                        <!-- </div> -->
+                        <button type="submit" href="{{url_for('user_recommendation')}}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Cari Rekomendasi</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </form>
+                    
+                    
+            </div>
+        </div>
+        </center>
+    </section>
+    
+{% endblock %}
+    

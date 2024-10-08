@@ -1,0 +1,39 @@
+{% extends "mainn.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+    <section id="rekomendasi" class="rekomendasi mt-10">
+        
+        <center>
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <p>Detail Perhitungan TFIDF</p>
+                </header>
+                <!-- <h5>Metadata = {{metadata}}</h5> -->
+
+
+                <table id="example2" class="table table-bordered table-striped">
+                    <thead>
+                        <th>Kata Ke-</th>
+                        <th>Term</th>
+                        <th>TF</th>
+                        <th>IDF</th>
+                        <th>W</th>
+                    </thead>
+                    <tbody>
+                        {% for index, row in df.iterrows() %}
+                        <tr>
+                            <td>{{ loop.index0 }}</td>
+                            <td>{{ row['Term'] }}</td>
+                            <td>{{ row['Perhitungan TF'] }}</td>
+                            <td>{{ row['Perhitungan IDF'] }}</td>
+                            <td>{{ row['Perhitungan W'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </center>
+    </section>
+{% endblock %}

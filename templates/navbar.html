@@ -1,0 +1,45 @@
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="static/img/logo.png" alt="">
+        <span>IT-Community</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+          <li><a class="nav-link scrollto" href="#values">Tujuan</a></li>
+          <li class="dropdown"><a href="#pricing"><span>Fitur Projek</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('data')}}">Data Projek Mahasiswa</a></li>
+              <li><a href="{{url_for('preprocessing')}}">Hasil Preprocessing</a></li>
+              <li><a href="{{url_for('tfidf')}}">Perhitungan TFIDF</a></li>
+              <li><a href="{{url_for('cosine')}}">Perhitungan Cosine Similarity</a></li>
+              <li><a href="{{url_for('rekomendasi')}}">Rekomendasi Anggota Projek</a></li>
+              <li><a href="{{url_for('rekomkomunitas')}}">Rekomendasi  Anggota Projek base Komunitas</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#pricing"><span>Fitur Komunitas</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{url_for('data')}}">Data Mahasiswa</a></li>
+              <li><a href="{{url_for('data')}}">Data Komunitas</a></li>
+              <li><a href="#">Hasil Preprocessing Mahasiswa</a></li>
+              <li><a href="#">Perhitungan TFIDF Mahasiswa</a></li>
+              <li><a href="#">Perhitungan Cosine Similarity Mahasiswa</a></li>
+              <li><a href="#">Hasil Preprocessing Komunitas</a></li>
+              <li><a href="#">Perhitungan TFIDF Komunitas</a></li>
+              <li><a href="#">Perhitungan Cosine Similarity Komunitas</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

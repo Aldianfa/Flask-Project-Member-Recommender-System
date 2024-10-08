@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+    <section id="rekomendasi" class="rekomendasi mt-10">
+        <center>
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <p>Hasil Perhitungan Cosine Similarity</p>
+                </header>
+                <table id="example2" class="table table-bordered table-striped">
+                    <thead>
+                        <th>Index</th>
+                        {% for index, _ in df.iterrows() %}
+                            <th>{{ index }}</th>
+                        {% endfor %}
+                    </thead>
+                    <tbody>
+                        {% for index, row in df.iterrows() %}
+                            <tr>
+                                <td>{{ index }}</td>
+                                {% for _, value in row.items() %}
+                                    <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </center>
+    </section>
+{% endblock %}
